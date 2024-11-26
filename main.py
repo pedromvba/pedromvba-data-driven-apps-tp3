@@ -70,7 +70,6 @@ while True:
         print("\nHistórico de conversa:")
         print(memory.chat_memory.messages)
 
-    ## COLOCAR AQUI O PRINT DA LISTA DE TAREFAS
     else:
         response = agent.run(command)
         print(response)
