@@ -54,17 +54,25 @@ agent = initialize_agent(
     verbose=True,
     memory=memory
 )
-
 # Input
 
-command = input("Digite um comando: ")
+while True:
 
-response = agent.run(command)
+    command = input("Digite um comando ou sair para encerrar a aplicação: ")
 
+    if command.lower() == "sair":
+        print("Encerrando aplicação...")
+        break
 
-print(response)
-print(tasks)
+    if command.lower() == "debug":
+        print("Debugando...")
+        print(tasks)
+        print("\nHistórico de conversa:")
+        print(memory.chat_memory.messages)
 
-
-print("\nHistórico de conversa:")
-print(memory.chat_memory.messages)
+    ## COLOCAR AQUI O PRINT DA LISTA DE TAREFAS
+    else:
+        response = agent.run(command)
+        print(response)
+        print("\n Lista Atualizada")
+        print(tasks)
