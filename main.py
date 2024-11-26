@@ -1,3 +1,4 @@
+# import
 import os
 from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAI
@@ -5,16 +6,13 @@ from langchain.agents import initialize_agent, Tool
 from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
 
-
-
+# load .env file
 load_dotenv()
 
 # LLM Model
-
 llm = GoogleGenerativeAI(model="gemini-pro")
 
 # Tools
-
 tasks = []
 
 def add_task(task: str) -> str:
@@ -42,11 +40,9 @@ tools = [
 ]
 
 # Memory
-
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 # Agent
-
 agent = initialize_agent(
     tools=tools,
     llm=llm,
@@ -54,8 +50,7 @@ agent = initialize_agent(
     verbose=True,
     memory=memory
 )
-# Input
-
+# Input and User Interaction System
 while True:
 
     command = input("Digite um comando ou sair para encerrar a aplicação: ")
