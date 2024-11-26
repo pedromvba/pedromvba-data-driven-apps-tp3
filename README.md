@@ -9,17 +9,23 @@ Este projeto é um gerenciador de tarefas simples que utiliza a biblioteca LangC
 ### Caso de Uso 1: Adicionar Tarefa
 
 Comando: "Adicione a tarefa 'Estudar matemática'
+
 Resultado Esperado: A tarefa 'Estudar matemática' é adicionada à lista de tarefas
+
 Resultado Observado: A tarefa foi adicionada corretamente e uma mensagem de confirmação foi exibida.
 
 ### Caso de Uso 2: Listar Tarefas
 Comando: "Liste todas as tarefas"
+
 Resultado Esperado: Todas as tarefas pendentes são listadas.
+
 Resultado Observado: As tarefas foram listadas corretamente, exibindo todas as tarefas pendentes
 
 ### Caso de Uso 3: Remover Tarefa
 Comando: "Remova a tarefa 'Estudar matemática'"
+
 Resultado Esperado: A tarefa 'Estudar matemática' é removida da lista de tarefas
+
 Resultado Observado: A tarefa foi removida corretamente e uma mensagem de confirmação foi exibida.
 
 ## Reflexão sobre a Facilitação pelo Agente
