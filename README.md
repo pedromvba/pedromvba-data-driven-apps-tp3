@@ -2,7 +2,7 @@
 
 ## Descrição do Problema e da Solução
 
-Este projeto é um gerenciador de tarefas simples que utiliza a biblioteca LangChain, Agentes e o modelo Google Generative AI para gerenciar uma lista de tarefas. O objetivo da aplicação é permitir que pessoas organizem e acompanhem suas tarefas cotidianas, como por exemplo, estudantes em uma faculdade ou gestores de equipe com diversos funcionários. A solução automatiza o processo de adicionar, listar e remover tarefas, proporcionando uma interface interativa e eficiente para o gerenciamento de tarefas.
+Este projeto é um gerenciador de tarefas simples que utiliza a biblioteca LangChain, Agentes e o modelo Google Generative AI para gerenciar uma lista de tarefas. O objetivo da aplicação é permitir que pessoas organizem e acompanhem suas tarefas cotidianas, como por exemplo, estudantes em uma faculdade ou profissionais liberais. A solução automatiza o processo de adicionar, listar e remover tarefas, proporcionando uma interface interativa e eficiente para o gerenciamento de tarefas.
 
 ## Casos de Uso Testados e Resultados Observados
 
