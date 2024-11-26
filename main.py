@@ -3,11 +3,7 @@ from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAI
 from langchain.agents import initialize_agent, Tool
 from langchain.prompts import PromptTemplate
-
-#from langchain.tools import tool
-#from langchain.agents import create_react_agent, AgentExecutor
-#from langchain.prompts import PromptTemplate 
-
+from langchain.memory import ConversationBufferMemory
 
 
 
@@ -15,8 +11,6 @@ load_dotenv()
 
 # LLM Model
 
-#GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-#llm = GoogleGenerativeAI(model="gemini-1.5-flash",api_key=GEMINI_API_KEY)
 llm = GoogleGenerativeAI(model="gemini-pro")
 
 # Tools
@@ -47,6 +41,10 @@ tools = [
     Tool(name="remove_task", func=remove_task, description="Remove uma tarefa da lista."),
 ]
 
+# Memory
+
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
 # Agent
 
 agent = initialize_agent(
@@ -54,11 +52,19 @@ agent = initialize_agent(
     llm=llm,
     agent="zero-shot-react-description",
     verbose=True,
+    memory=memory
 )
 
-# Execução do agente com uma entrada inicial
-response = agent.run("Adicione a tarefa 'Estudar matemática'.")
+# Input
+
+command = input("Digite um comando: ")
+
+response = agent.run(command)
 
 
 print(response)
 print(tasks)
+
+
+print("\nHistórico de conversa:")
+print(memory.chat_memory.messages)
