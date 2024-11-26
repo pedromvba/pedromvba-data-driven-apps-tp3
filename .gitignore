@@ -1,3 +1,5 @@
 .env
 .venv
 support*.ipynb
+*.vscode*
+*__pycache__*
